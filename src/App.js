@@ -4,7 +4,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AddStudentForm from "./AddStudentForm";
 import StudentTable from "./StudentTable"; // Import the StudentTable component
-import EditStudentForm from "./EditStudentForm";
 import DeleteStudentForm from "./DeleteStudentForm";
 
 function App() {
@@ -36,7 +35,6 @@ function App() {
             <Route path="/" element={<AddStudentForm />} />
             <Route path="/students" element={<StudentTable />} />
             {/* Added routes for update and delete */}
-          <Route path="/students/edit/:rollNo" element={<EditStudentForm />} />
           <Route path="/students/delete/:rollNo" element={<DeleteStudentForm />} />
           </Routes>
         </div>
