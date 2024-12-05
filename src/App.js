@@ -5,17 +5,19 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import AddStudentForm from "./AddStudentForm";
 import StudentTable from "./StudentTable"; // Import the StudentTable component
 import DeleteStudentForm from "./DeleteStudentForm";
+import "./App.css"
 
 function App() {
   return (
     <Router>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        {/* Navbar */}
+        <nav className="navbar">
           <Link className="navbar-brand" to="/">
             Student App
           </Link>
-          <div className="collapse navbar-collapse">
-            <ul className="navbar-nav me-auto">
+          <div className="navbar-collapse">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
                   Add Student
@@ -30,12 +32,12 @@ function App() {
           </div>
         </nav>
 
-        <div>
+        {/* Routes */}
+        <div className="content">
           <Routes>
             <Route path="/" element={<AddStudentForm />} />
             <Route path="/students" element={<StudentTable />} />
-            {/* Added routes for update and delete */}
-          <Route path="/students/delete/:rollNo" element={<DeleteStudentForm />} />
+            <Route path="/students/delete/:rollNo" element={<DeleteStudentForm />} />
           </Routes>
         </div>
       </div>

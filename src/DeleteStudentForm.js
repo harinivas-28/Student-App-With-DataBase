@@ -8,7 +8,7 @@ const DeleteStudentForm = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:5000/student/${rollNo}`);
+      const response = await axios.delete(`https://5d62-2401-4900-675d-9181-c142-7843-4a83-8796.ngrok-free.app/student/${rollNo}`);
       if(response.data.message === "Student deleted successfully"){
         alert("Student deleted successfully");
         navigate('/students'); // Redirect to the students list

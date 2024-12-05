@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./AddStudentForm.css"
 
 const StudentForm = () => {
   const [studentData, setStudentData] = useState({
@@ -37,7 +38,7 @@ const StudentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/student', studentData);
+      const response = await axios.post('https://5d62-2401-4900-675d-9181-c142-7843-4a83-8796.ngrok-free.app/student', studentData);
       setMessage(`Success: ${response.data.message}`);
     } catch (err) {
       setMessage(`Error: ${err.response ? err.response.data.message : err.message}`);
@@ -45,84 +46,52 @@ const StudentForm = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2>Student Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
+      <form onSubmit={handleSubmit} className="student-form">
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
           <input
+            id="name"
             type="text"
             name="name"
             value={studentData.name}
             onChange={handleChange}
             required
+            className="form-input"
           />
         </div>
-        <div>
-          <label>Roll No:</label>
+        <div className="form-group">
+          <label htmlFor="rollNo">Roll No:</label>
           <input
+            id="rollNo"
             type="text"
             name="rollNo"
             value={studentData.rollNo}
             onChange={handleChange}
             required
+            className="form-input"
           />
         </div>
-        <div>
-          <label>Java Score:</label>
-          <input
-            type="number"
-            name="Java"
-            value={studentData.scores.Java}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>CPP Score:</label>
-          <input
-            type="number"
-            name="CPP"
-            value={studentData.scores.CPP}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Python Score:</label>
-          <input
-            type="number"
-            name="Python"
-            value={studentData.scores.Python}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>GenAI Score:</label>
-          <input
-            type="number"
-            name="GenAI"
-            value={studentData.scores.GenAI}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>FSD Score:</label>
-          <input
-            type="number"
-            name="FSD"
-            value={studentData.scores.FSD}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <button type="submit">Submit</button>
+        {['Java', 'CPP', 'Python', 'GenAI', 'FSD'].map((subject) => (
+          <div key={subject} className="form-group">
+            <label htmlFor={subject}>{`${subject} Score:`}</label>
+            <input
+              id={subject}
+              type="number"
+              name={subject}
+              value={studentData.scores[subject]}
+              onChange={handleChange}
+              required
+              className="form-input"
+            />
+          </div>
+        ))}
+        <div className="form-group">
+          <button type="submit" className="submit-btn">Submit</button>
         </div>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className="message">{message}</p>}
     </div>
   );
 };
