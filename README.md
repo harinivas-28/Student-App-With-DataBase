@@ -147,7 +147,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 * ngrok for frontend tunneling.
 * React for frontend development.
 * Node.js and Express.js for backend API.
-```
 
 # Getting Started with Create React App
 
