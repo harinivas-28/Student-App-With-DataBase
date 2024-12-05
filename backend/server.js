@@ -7,7 +7,7 @@ app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
  
 // Connect to MongoDB 
-mongoose.connect("mongodb+srv://harinivas_28:mongo_harinivas@cluster0.cikhuki.mongodb.net/studentsDB?retryWrites=true&w=majority", { 
+mongoose.connect("mongodb+srv://<user_name>:<password>@cluster0.cikhuki.mongodb.net/studentsDB?retryWrites=true&w=majority", { 
     useNewUrlParser: true, 
   }) 
   .then(() => console.log("Connected to MongoDB")) 
