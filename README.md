@@ -29,6 +29,66 @@ The **Student App** is a web application built with React for managing and track
    git clone <repository_url>
    cd student-app
 
+**Backend Setup**
+
+1. Navigate to the backend folder:
+  ```bash
+  cd backend
+  ```
+
+2. Install dependencies:
+  ```bash
+  npm install
+  ```
+
+3. Set up environment variables (Create a `.env` file in the backend directory with the following):
+  ```
+  REACT_APP_API_BASE = "http://localhost:3001"  
+  DATABASE_URL = "your-database-url"
+  ```
+
+4. Start the backend server:
+  ```bash
+  npm start
+  ```
+
+**ngrok Setup**
+
+1. Install ngrok (if not already installed):
+  ```bash
+  npm install -g ngrok
+  ```
+
+2. Start ngrok for backend tunneling:
+  ```bash
+  ngrok http 3001
+  ```
+
+3. Copy the public URL provided by ngrok and update your frontend API calls to use this URL.
+
+
+**Project Structure**
+
+```
+project/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   └── App.js
+│   └── ...
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── ...
+└── package.json
+```
+
+**(Note:** The `package.json` file would contain the necessary dependencies for both the frontend and backend.)
+
+**(Note 2):**  The `Project Structure` is a visual representation, not executable code. The entries under each folder would contain actual files and their contents. The structure describes the typical layout of a project with a frontend (React) and a backend (Node.js/Express). The specific file names and folder contents are not shown, as only a directory structure and descriptions are present in the original image.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
