@@ -1,3 +1,34 @@
+# **Student App**
+
+The **Student App** is a web application built with React for managing and tracking students' marks using their roll numbers. It integrates with a MongoDB cluster for data storage and utilizes **ngrok** for secure tunneling.
+
+## **Features**
+
+- **Add Student**: Add a new student with their name, roll number, and scores for various subjects (Java, CPP, Python, GenAI, FSD).
+- **View Students**: View a list of all students along with their marks.
+- **Edit Student**: Update a student's marks directly from the table.
+- **Delete Student**: Remove a student from the database by roll number.
+
+---
+
+## **Technologies Used**
+
+- **Frontend**: React, JSX, CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Atlas)
+- **Tunneling**: ngrok
+
+---
+
+## **Setup Instructions**
+
+### **Frontend Setup**
+
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd student-app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
